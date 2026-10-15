@@ -1,15 +1,12 @@
 import 'dart:math';
 
-abstruct class Character {
-  Character({
-    required this.name,
-    required this.hp,
-  }) : maxHp = hp;
-  int attack();
+abstract class Character {
   final String name;
   int hp;
   final int maxHp;
   final Random _random = Random();
+  Character({required this.name, required this.hp,}) : maxHp = hp;
+  int attack();
 
   void takeDamage(int damage) {
     hp -= damage;
