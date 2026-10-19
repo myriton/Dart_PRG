@@ -5,13 +5,17 @@ abstract class Character {
   int hp;
   final int maxHp;
   final Random _random = Random();
-  Character({required this.name, required this.hp,}) : maxHp = hp;
+  Character({
+    required this.name,
+    required this.hp,
+  }) : maxHp = hp;
   int attack();
 
   void takeDamage(int damage) {
     hp -= damage;
     if (hp < 0) hp = 0;
   }
+
   bool get isAlive => hp > 0;
 
   String get hpBar {
@@ -23,6 +27,7 @@ abstract class Character {
   void describe() {
     print('$name $hpBar');
   }
+
   @override
   String toString();
 }
